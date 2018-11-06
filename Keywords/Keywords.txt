@@ -1,0 +1,11 @@
+*** Keywords ***
+Open Redmine
+    [Arguments]   ${url}  ${browser}
+    Open Browser  ${url}  ${browser}
+    Maximize Browser Window
+
+Login To Redmine
+    [Arguments]       ${username}         ${password}
+    Input Text        ${input_username}   ${username}
+    Input Password    ${input_password}   ${password}
+    Click Button      ${btn_login}

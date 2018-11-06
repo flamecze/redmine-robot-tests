@@ -1,0 +1,11 @@
+*** Settings ***
+Library        Selenium2Library
+
+Resource       ../Keywords/Keywords.txt
+Resource       ../Settings/Messages.txt
+Resource       ../Settings/Browsing.txt
+Resource       ../Settings/Credentials.txt
+
+# Page objects
+Resource       ../Objects/Home.txt
+Resource       ../Objects/Login.txt
