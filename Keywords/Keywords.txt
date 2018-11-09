@@ -2,7 +2,10 @@
 
 Open Redmine
     [Arguments]   ${url}  ${browser}
-    Open Browser  ${url}  ${browser}
+    ${list} =             Create Dictionary    intl.accept_languages=en
+    ${prefs} =            Create Dictionary    prefs=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${prefs}
+    Open Browser  ${url}  browser=${browser}   desired_capabilities=${desired caps}
     Maximize Browser Window
 
 Login To Redmine
