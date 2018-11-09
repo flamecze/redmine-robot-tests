@@ -1,0 +1,5 @@
+*** Variables ***
+
+${reg_confirm}	id=flash_notice
+
+
