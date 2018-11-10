@@ -12,3 +12,14 @@ Change Settings
     Input Text    ${surname_field}     ${change_surname}
     Click Button    ${save_btn}
     Page Should Contain Element    ${reg_confirm}     
+    
+Change Settings Empty Fields
+    Login To Redmine     ${username}    ${password}
+    Click Element    ${account} 
+    Input Text   ${name_field}    ${EMPTY}
+    Input Text    ${surname_field}    ${EMPTY}
+    Click Button    ${save_btn}
+    Page Should Contain Element    ${empty_name}
+    Page Should Contain Element    ${empty_surname}
+               
+    
