@@ -1,0 +1,23 @@
+*** Variables ***
+${issue_new_href}	              xpath://div[@id='main-menu']//a[text()='New issue']
+${issue_title_el}                 tag:h2
+${issue_subject_el}               xpath://div[@class='subject']//h3
+${issue_subject_input}            id=issue_subject
+${issue_description_input}        id=issue_description
+${issue_start_date_input}         id=issue_start_date
+${issue_due_date_input}           id=issue_due_date
+${issue_estimated_hrs_input}      id=issue_estimated_hours
+${issue_priority_input}           id=issue_priority_id
+${issue_done_ratio_input}         id=issue_done_ratio
+${issue_btn_submit}	              name=commit
+${issue_confirm}	              id=flash_notice
+${issue_error}                    id=errorExplanation
+${issue_attrs_table}              xpath://table[@class='attributes']
+${issue_attrs_status}             ${issue_attrs_table}//td[@class='status']
+${issue_attrs_priority}           ${issue_attrs_table}//td[@class='priority']
+${issue_attrs_start_date}         ${issue_attrs_table}//td[@class='start-date']
+${issue_attrs_due_date}           ${issue_attrs_table}//td[@class='due-date']
+${issue_attrs_estimated_hours}    ${issue_attrs_table}//td[@class='estimated-hours']
+${issue_attrs_progress_perc}      ${issue_attrs_table}//td[@class='progress']/p[@class='percent']
+${issue_description_container}    xpath://div[@class='description']/div[@class='wiki']/p
+${issue_delete_link}              xpath://a[@data-method='delete']

@@ -16,6 +16,11 @@ Login To Redmine
     Input Text    ${passwordfield2}   ${password}
     Click Element	${loginbutton}
 
+Open Redmine And Login
+    [Arguments]        ${url}  ${browser}  ${username}  ${password}
+    Open Redmine       ${url}  ${browser}
+    Login To Redmine   ${username}  ${password}
+
 Invalid Login To Redmine
     [Arguments]       ${username}         ${password}
     Click Element   ${singon}
@@ -37,7 +42,7 @@ Top menu select
 Main menu select
 	[Arguments]		${menu_href}	${contains}		
 	Click Element	${menu_href}
-	Wait Until Page Contains Element	${contains}				
+	Wait Until Page Contains Element	${contains}
 
 Create project
 	[Arguments]		${project_name_arg}
@@ -62,7 +67,7 @@ Search via input
 Jump via select
 	[Arguments]		${project_name_arg}
 	Select From List By Label		${project_list}		${project_name_arg}		 
-	Wait Until Page Contains Element	${project_name_h1}		
+	Wait Until Element Contains  	${project_name_h1}  ${project_name_arg}
 	
 Jump on tab
 	[Arguments]		${tab_name}
