@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *** Settings ***
 Library        Selenium2Library
 
@@ -12,3 +13,21 @@ Resource       ../Objects/Login.txt
 Resource       ../Objects/Registration.txt
 Resource       ../Objects/Account.txt
 Resource       ../Objects/Deletion.txt
+=======
+*** Settings ***
+Library        Selenium2Library
+
+Resource       ../Keywords/Keywords.txt
+Resource       ../Settings/Messages.txt
+Resource       ../Settings/Browsing.txt
+Resource       ../Settings/Credentials.txt
+
+# Page objects
+Resource       ../Objects/Home.txt
+Resource       ../Objects/Login.txt
+Resource       ../Objects/Registration.txt
+Resource       ../Objects/Account.txt
+Resource       ../Objects/Logout.txt
+Resource       ../Objects/Deletion.txt
+Resource 	   ../Objects/Project.txt
+>>>>>>> branch 'master' of https://github.com/flamecze/redmine-robot-tests.git

@@ -1,1 +1,3 @@
 *** Variables ***
+${project_succ}		Successful creation.
+${project_err}		Identifier has already been taken
