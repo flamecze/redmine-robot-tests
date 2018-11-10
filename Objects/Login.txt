@@ -1,1 +1,5 @@
 *** Variables ***
+${singon}	xpath=//*[@id="account"]/ul/li[1]/a
+${userfield2}	id=username
+${passwordfield2}	id=password
+${loginbutton}	xpath=//*[@id="login-form"]/form/table/tbody/tr[4]/td[2]/input

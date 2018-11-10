@@ -10,6 +10,7 @@ Open Redmine
 
 Login To Redmine
     [Arguments]       ${username}         ${password}
-    Input Text        ${input_username}   ${username}
-    Input Password    ${input_password}   ${password}
-    Click Button      ${btn_login}
+    Click Element   ${singon}
+    Input Text    ${userfield2}  ${username}
+    Input Text    ${passwordfield2}   ${password}
+    Click Element	${loginbutton}
