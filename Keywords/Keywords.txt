@@ -14,3 +14,15 @@ Login To Redmine
     Input Text    ${userfield2}  ${username}
     Input Text    ${passwordfield2}   ${password}
     Click Element	${loginbutton}
+    
+Invalid Login To Redmine
+    [Arguments]       ${username}         ${password}
+    Click Element   ${singon}
+    Input Text    ${userfield2}  ${username}
+    Input Text    ${passwordfield2}   ${short_pwd}
+    Click Element	${loginbutton}
+
+Verify Error Messages
+    [Arguments]    ${invalidlogin} 
+    Page Should Contain    ${invalidlogin}      
+   

@@ -1,2 +1,0 @@
-*** Variables ***
-${logout}    xpath=//*[@id="account"]/ul/li[2]/a

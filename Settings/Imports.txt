@@ -11,5 +11,4 @@ Resource       ../Objects/Home.txt
 Resource       ../Objects/Login.txt
 Resource       ../Objects/Registration.txt
 Resource       ../Objects/Account.txt
-Resource       ../Objects/Logout.txt
 Resource       ../Objects/Deletion.txt

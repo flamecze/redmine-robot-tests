@@ -1,5 +1,5 @@
 *** Variables ***
 
 ${reg_confirm}	id=flash_notice
-
+${save_btn}	xpath=//*[@id="my_account_form"]/div[1]/input
 
