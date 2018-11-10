@@ -4,3 +4,4 @@ report.html
 .project
 selenium-screenshot-*.png
 Thumbs.db
+*.log
