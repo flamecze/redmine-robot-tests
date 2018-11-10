@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *** Keywords ***
 
 Open Redmine

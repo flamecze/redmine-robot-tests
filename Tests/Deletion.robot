@@ -1,11 +1,10 @@
 *** Settings ***
 Resource  ../Settings/Imports.txt
-Test Setup     Open Redmine  ${url}  ${browser}
+Test Setup     Open Redmine And Login  ${url}  ${browser}  ${username}  ${password}
 Test Teardown  Close Browser
 
 *** Test Cases ***
 Valid Login To Readmine
-    Login To Redmine     ${username}    ${password}
     Click Element    ${account}
     Click Element    ${trashbin}
     Click Element    ${delete}
