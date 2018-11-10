@@ -13,3 +13,4 @@ Resource       ../Objects/Registration.txt
 Resource       ../Objects/Account.txt
 Resource       ../Objects/Logout.txt
 Resource       ../Objects/Deletion.txt
+Resource 	   ../Objects/Project.txt
