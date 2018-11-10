@@ -15,7 +15,7 @@ Login To Redmine
     Input Text    ${userfield2}  ${username}
     Input Text    ${passwordfield2}   ${password}
     Click Element	${loginbutton}
-    
+
 Invalid Login To Redmine
     [Arguments]       ${username}         ${password}
     Click Element   ${singon}
@@ -24,26 +24,8 @@ Invalid Login To Redmine
     Click Element	${loginbutton}
 
 Verify Error Messages
-    [Arguments]    ${invalidlogin} 
-    Page Should Contain    ${invalidlogin}      
-   
-=======
-*** Keywords ***
-
-Open Redmine
-    [Arguments]   ${url}  ${browser}
-    ${list} =             Create Dictionary    intl.accept_languages=${browser_language}
-    ${prefs} =            Create Dictionary    prefs=${list}
-    ${desired caps} =     Create Dictionary    chromeOptions=${prefs}
-    Open Browser  ${url}  browser=${browser}   desired_capabilities=${desired caps}
-    Maximize Browser Window
-
-Login To Redmine
-    [Arguments]       ${username}         ${password}
-    Click Element   ${singon}
-    Input Text    ${userfield2}  ${username}
-    Input Text    ${passwordfield2}   ${password}
-    Click Element	${loginbutton}
+    [Arguments]    ${invalidlogin}
+    Wait Until Page Contains Element    ${invalidlogin}
 
 #	Project keywords
 
@@ -98,5 +80,4 @@ Add new member
 	Click Element		${project_member_role_1}
 	Click Element		${project_member_role_2}
 	Click Element		${project_member_role_3}
-	Click Element		${project_member_addbtn}	
->>>>>>> branch 'master' of https://github.com/flamecze/redmine-robot-tests.git
+	Click Element		${project_member_addbtn}

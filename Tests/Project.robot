@@ -3,7 +3,7 @@ Resource  ../Settings/Imports.txt
 Test Setup     Open Redmine  ${url}  ${browser}
 Test Teardown  Close Browser
 
-*** Test Cases ***   
+*** Test Cases ***
 New project and subproject
     Login To Redmine    ${username}    ${password}
     Top menu select    ${project_href}    ${project_new}
