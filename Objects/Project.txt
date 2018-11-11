@@ -10,6 +10,7 @@ ${project_list}				id=project_quick_jump_box
 ${project_name_h1}			tag=h1
 ${project_name_query}		xpath://dl[@id='search-results']
 ${project_set_href}			xpath://div[@id='main-menu']//a[text()='Settings']
+${project_calendar_href}	xpath://div[@id='main-menu']//a[text()='Calendar']
 ${project_add_member}		xpath://a[text()='New member']
 ${project_member_list}		id=ajax-modal
 ${project_member_search}	id=principal_search
@@ -21,3 +22,5 @@ ${project_member_addbtn}	xpath://div[@id='ajax-modal']//form[@id='new_membership
 ${project_member_table}		xpath://table[@class='list members']//tbody
 ${project_msg}				id=flash_notice
 ${project_msg_err}			id=errorExplanation
+${project_calendar_el}           xpath://table[@class='cal']
+${project_calendar_today_cell}   ${project_calendar_el}//td[contains(concat(' ', normalize-space(@class), ' '), ' today ')]

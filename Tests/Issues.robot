@@ -40,7 +40,17 @@ Delete Issue
     Input Text                         ${issue_subject_input}           ${issue_subject}
     Wait For Successful Issue Submit   ${issue_subject}
     Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
-    
+
+View Today's Issue In Calendar
+    Go To New Issue For Project        ${project_name_for_issues}
+    Input Text                         ${issue_subject_input}           ${issue_subject}
+    Wait For Successful Issue Submit   ${issue_subject}
+    ${title_text} =   Get Text         ${issue_title_el}
+    Click Link                         ${project_calendar_href}
+    Wait Until Element Contains        ${project_calendar_today_cell}   ${title_text}
+    Go Back
+    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
+
 Create Issue With Assignee
     Go To New Issue For Project        ${project_name_for_issues}
     Input Text                         ${issue_subject_input}           ${issue_subject}
@@ -48,7 +58,7 @@ Create Issue With Assignee
     Wait For Successful Issue Submit   ${issue_subject}
     Element Should Contain             ${issue_attrs_assigned_to}       ${issue_assignee}
     Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
-    
+
 Edit Issue
     Go To New Issue For Project        ${project_name_for_issues}
     Input Text                         ${issue_subject_input}           ${issue_subject}
