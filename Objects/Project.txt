@@ -14,7 +14,8 @@ ${project_calendar_href}	xpath://div[@id='main-menu']//a[text()='Calendar']
 ${project_add_member}		xpath://a[text()='New member']
 ${project_member_list}		id=ajax-modal
 ${project_member_search}	id=principal_search
-${project_member_checkbox}	xpath://div[@id='ajax-modal']//div[@id='principals_for_new_member']//label
+${project_member_results}	xpath://div[@id='ajax-modal']//div[@id='principals_for_new_member']
+${project_member_checkbox}	${project_member_results}//label
 ${project_member_role_1}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[1]
 ${project_member_role_2}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[2]
 ${project_member_role_3}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[3]
