@@ -8,6 +8,7 @@ Resource       ../Settings/Browsing.txt
 Resource       ../Settings/Credentials.txt
 
 # Page objects
+Resource       ../Objects/_General.txt
 Resource       ../Objects/Home.txt
 Resource       ../Objects/LoginLogout.txt
 Resource       ../Objects/Registration.txt

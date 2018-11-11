@@ -20,7 +20,5 @@ ${project_member_role_2}		xpath://div[@id='ajax-modal']//fieldset[@class='box']/
 ${project_member_role_3}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[3]
 ${project_member_addbtn}	xpath://div[@id='ajax-modal']//form[@id='new_membership']//input[@id='member-add-submit']
 ${project_member_table}		xpath://table[@class='list members']//tbody
-${project_msg}				id=flash_notice
-${project_msg_err}			id=errorExplanation
 ${project_calendar_el}           xpath://table[@class='cal']
 ${project_calendar_today_cell}   ${project_calendar_el}//td[contains(concat(' ', normalize-space(@class), ' '), ' today ')]

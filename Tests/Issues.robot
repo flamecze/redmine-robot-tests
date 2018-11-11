@@ -32,7 +32,7 @@ Create Issue With Filled Valid Values
 Create Issue Without Subject
     Go To New Issue For Project        ${project_name_for_issues}
     Click Button                       ${issue_btn_submit}
-    Wait Until Page Contains Element   ${issue_error}
+    Wait Until Page Contains Element   ${error_msg_box}
     Page Should Contain                ${issue_err_subject_blank}
 
 Delete Issue
@@ -66,7 +66,7 @@ Edit Issue
     Click Link                         ${issue_edit_link}
     Select From List By Label          ${issue_priority_input}          ${issue_priority}
     Press Key                          ${issue_subject_input}           \\13
-    Page Should Contain Element        ${issue_confirm}
+    Page Should Contain Element        ${success_msg_box}
     Element Should Contain             ${issue_attrs_priority}          ${issue_priority}
     Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
@@ -94,4 +94,4 @@ Wait For Successful Issue Submit
 	[Arguments]		               ${issue_subject}
     Click Button                       ${issue_btn_submit}
     Wait Until Element Contains        ${issue_subject_el}      ${issue_subject}
-    Page Should Contain Element        ${issue_confirm}
+    Page Should Contain Element        ${success_msg_box}

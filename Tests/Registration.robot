@@ -15,7 +15,7 @@ Registration - Happy Path
     Input Text    ${surname_field}    ${surname}	
     Select From List By Value    ${lang_dropdown}    ${en_value}
     Click Button    ${btn_submit}
-    Page Should Contain Element    ${reg_confirm}     
+    Page Should Contain Element    ${success_msg_box}
 
 Try to send empty reg form
 

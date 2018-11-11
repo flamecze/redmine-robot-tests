@@ -10,7 +10,7 @@ Change Settings
     Input Text    ${name_field}  ${change_name}
     Input Text    ${surname_field}     ${change_surname}
     Click Button    ${save_btn}
-    Page Should Contain Element    ${reg_confirm}     
+    Page Should Contain Element    ${success_msg_box}
     
 Change Settings Empty Fields
     Click Element    ${account} 

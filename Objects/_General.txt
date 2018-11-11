@@ -1,0 +1,3 @@
+*** Variables ***
+${success_msg_box}   id=flash_notice
+${error_msg_box}     id=errorExplanation
