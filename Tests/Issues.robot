@@ -78,7 +78,7 @@ Go To New Issue For Project
 	[Arguments]		               ${project_name_arg}
     Jump via select                    ${project_name_arg}
     Click Element                      ${issue_new_href}
-    Wait Until Page Contains Element   xpath://h2[text()='New issue']
+    Wait Until Page Contains Element   ${issue_new_title}
 
 Wait For Successful Issue Submit
 	[Arguments]		               ${issue_subject}

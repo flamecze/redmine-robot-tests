@@ -1,6 +1,7 @@
 *** Variables ***
 ${issue_new_href}	              xpath://div[@id='main-menu']//a[text()='New issue']
 ${issue_title_el}                 tag:h2
+${issue_new_title}                xpath://h2[text()='New issue']
 ${issue_subject_el}               xpath://div[@class='subject']//h3
 ${issue_subject_input}            id=issue_subject
 ${issue_description_input}        id=issue_description
