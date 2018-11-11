@@ -2,3 +2,4 @@
 ${project_succ}		Successful creation.
 ${project_err}		Identifier has already been taken
 ${issue_err_subject_blank}     Subject cannot be blank
+${issue_cat_err_name_blank}     Name cannot be blank

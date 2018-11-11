@@ -51,6 +51,19 @@ View Today's Issue In Calendar
     Go Back
     Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
+Create Issue Category
+    Go To New Issue Category For Project  ${project_name_for_issues}
+    ${category_name} =                    Generate Random String           20  [LETTERS]
+    Input Text                            ${issue_cat_name_input}          Category_${category_name}
+    Click Button                          ${issue_cat_btn_submit}
+    Wait Until Element Contains           ${issue_cat_table}               Category_${category_name}
+
+Create Issue Category Without Name
+    Go To New Issue Category For Project  ${project_name_for_issues}
+    Click Button                          ${issue_btn_submit}
+    Wait Until Page Contains Element      ${error_msg_box}
+    Page Should Contain                   ${issue_cat_err_name_blank}
+
 Create Issue With Assignee
     Go To New Issue For Project        ${project_name_for_issues}
     Input Text                         ${issue_subject_input}           ${issue_subject}
@@ -83,6 +96,12 @@ Delete Issue From Detail
     Click Link        ${delete_link}
     Handle Alert
     Wait Until Page Does Not Contain   ${issue_id}
+
+Go To New Issue Category For Project
+	[Arguments]		               ${project_name_arg}
+    Jump via select                    ${project_name_arg}
+    Jump to project settings tab       ${project_tab_categories}
+    Click Link                         ${issue_new_cat_link}
 
 Go To New Issue For Project
 	[Arguments]		               ${project_name_arg}

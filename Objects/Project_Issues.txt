@@ -11,8 +11,10 @@ ${issue_estimated_hrs_input}      id=issue_estimated_hours
 ${issue_priority_input}           id=issue_priority_id
 ${issue_done_ratio_input}         id=issue_done_ratio
 ${issue_btn_submit}	              name=commit
-${issue_confirm}	              id=flash_notice
-${issue_error}                    id=errorExplanation
+${issue_cat_btn_submit}	          name=commit
+${issue_cat_name_input}           id=issue_category_name
+${issue_cat_table}                id=tab-content-categories
+${issue_new_cat_link}             New category
 ${issue_attrs_table}              xpath://table[@class='attributes']
 ${issue_attrs_status}             ${issue_attrs_table}//td[@class='status']
 ${issue_attrs_priority}           ${issue_attrs_table}//td[@class='priority']

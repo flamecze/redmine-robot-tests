@@ -22,3 +22,5 @@ ${project_member_addbtn}	xpath://div[@id='ajax-modal']//form[@id='new_membership
 ${project_member_table}		xpath://table[@class='list members']//tbody
 ${project_calendar_el}           xpath://table[@class='cal']
 ${project_calendar_today_cell}   ${project_calendar_el}//td[contains(concat(' ', normalize-space(@class), ' '), ' today ')]
+${project_tab_members}	    tab-members
+${project_tab_categories}   tab-categories
