@@ -1,0 +1,4 @@
+*** Variables ***
+${project_succ}		Successful creation.
+${project_err}		Identifier has already been taken
+${issue_err_subject_blank}     Subject cannot be blank

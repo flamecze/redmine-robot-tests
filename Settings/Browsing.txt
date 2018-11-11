@@ -1,0 +1,4 @@
+*** Variables ***
+${url}                  http://demo.redmine.org/
+${browser}              chrome
+${browser_language}     en

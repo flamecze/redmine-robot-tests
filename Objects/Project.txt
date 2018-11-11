@@ -1,0 +1,23 @@
+*** Variables ***
+${project_href}				xpath://div[@id='top-menu']//a[@href='/projects' and text()='Projects']
+${project_new}				xpath://div[@id='content']//a[text()='New project']
+${subproject_new}			xpath://div[@id='content']//a[text()='New subproject']
+${subproject_of}			id=project_parent_id
+${project_name_input}		id=project_name
+${project_submit}			xpath://form[@id='new_project']//input[@name='commit' and @value='Create']
+${project_input}			id=q
+${project_list}				id=project_quick_jump_box
+${project_name_h1}			tag=h1
+${project_name_query}		xpath://dl[@id='search-results']
+${project_set_href}			xpath://div[@id='main-menu']//a[text()='Settings']
+${project_add_member}		xpath://a[text()='New member']
+${project_member_list}		id=ajax-modal
+${project_member_search}	id=principal_search
+${project_member_checkbox}	xpath://div[@id='ajax-modal']//div[@id='principals_for_new_member']//label
+${project_member_role_1}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[1]
+${project_member_role_2}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[2]
+${project_member_role_3}		xpath://div[@id='ajax-modal']//fieldset[@class='box']//div[@class='roles-selection']//label[3]
+${project_member_addbtn}	xpath://div[@id='ajax-modal']//form[@id='new_membership']//input[@id='member-add-submit']
+${project_member_table}		xpath://table[@class='list members']//tbody
+${project_msg}				id=flash_notice
+${project_msg_err}			id=errorExplanation

@@ -1,0 +1,3 @@
+*** Variables ***
+
+${reg_link}    class=register

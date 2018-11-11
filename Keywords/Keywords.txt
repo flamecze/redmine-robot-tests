@@ -1,0 +1,87 @@
+*** Keywords ***
+
+Open Redmine
+    [Arguments]   ${url}  ${browser}
+    ${list} =             Create Dictionary    intl.accept_languages=${browser_language}
+    ${prefs} =            Create Dictionary    prefs=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${prefs}
+    Open Browser  ${url}  browser=${browser}   desired_capabilities=${desired caps}
+    Maximize Browser Window
+
+Login To Redmine
+    [Arguments]       ${username}         ${password}
+    Click Element   ${singon}
+    Input Text    ${userfield2}  ${username}
+    Input Text    ${passwordfield2}   ${password}
+    Click Element	${loginbutton}
+
+Open Redmine And Login
+    [Arguments]        ${url}  ${browser}  ${username}  ${password}
+    Open Redmine       ${url}  ${browser}
+    Login To Redmine   ${username}  ${password}
+
+Invalid Login To Redmine
+    [Arguments]       ${username}         ${password}
+    Click Element   ${singon}
+    Input Text    ${userfield2}  ${username}
+    Input Text    ${passwordfield2}   ${short_pwd}
+    Click Element	${loginbutton}
+
+Verify Error Messages
+    [Arguments]    ${invalidlogin}
+    Wait Until Page Contains Element    ${invalidlogin}
+
+#	Project keywords
+
+Top menu select
+	[Arguments]		${menu_href}	${contains}		
+	Click Element 	${menu_href}
+	Wait Until Page Contains Element	${contains}
+
+Main menu select
+	[Arguments]		${menu_href}	${contains}		
+	Click Element	${menu_href}
+	Wait Until Page Contains Element	${contains}
+
+Create project
+	[Arguments]		${project_name_arg}
+	Click Element	${project_new}
+	Wait Until Page Contains Element 	${project_name_input}
+	Input Text		${project_name_input}		${project_name_arg}
+	Click Button	${project_submit}	
+	
+Create subproject
+	[Arguments]		${subproject_name_arg}
+	Click Element	${subproject_new}
+	Wait Until Page Contains Element 	${project_name_input}
+	Input Text		${project_name_input}		${subproject_name_arg}
+	Click Button	${project_submit}		
+
+Search via input
+	[Arguments]		${input_text}
+	Input Text		${project_input}	${input_text}
+	Press Key		${project_input}		\\13
+	Wait Until Element Contains		${project_name_query}		${input_text}	
+
+Jump via select
+	[Arguments]		${project_name_arg}
+	Select From List By Label		${project_list}		${project_name_arg}		 
+	Wait Until Element Contains  	${project_name_h1}  ${project_name_arg}
+	
+Jump on tab
+	[Arguments]		${tab_name}
+	Click Element	${project_set_href}
+	Wait Until Page Contains Element	xpath://h2[text()='Settings']
+	Click Element 	xpath://a[@id='${tab_name}']
+	
+Add new member		
+	[Arguments]		${new_member}
+	Click Element	${project_add_member}
+	Wait Until Element Is Visible		${project_member_list}	
+	Input Text		${project_member_search}	${new_member}
+	Sleep    3
+	Click Element    	${project_member_checkbox}
+	Click Element		${project_member_role_1}
+	Click Element		${project_member_role_2}
+	Click Element		${project_member_role_3}
+	Click Element		${project_member_addbtn}

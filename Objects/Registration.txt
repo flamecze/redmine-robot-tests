@@ -1,0 +1,13 @@
+*** Variables ***
+${user_field}	id=user_login
+${pwd_field}	id=user_password 
+${confirm_field}	id=user_password_confirmation
+${name_field}	id=user_firstname
+${surname_field}	id=user_lastname
+${mail_field}	id=user_mail
+${lang_dropdown}	id=user_language
+${en_value}	en-GB
+${cz_value}	cz
+${btn_submit}	name=commit
+
+
