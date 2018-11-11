@@ -40,6 +40,25 @@ Delete Issue
     Input Text                         ${issue_subject_input}           ${issue_subject}
     Wait For Successful Issue Submit   ${issue_subject}
     Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
+    
+Create Issue With Assignee
+    Go To New Issue For Project        ${project_name_for_issues}
+    Input Text                         ${issue_subject_input}           ${issue_subject}
+    Select From List By Label          ${issue_assigned_to_input}       ${issue_assignee}
+    Wait For Successful Issue Submit   ${issue_subject}
+    Element Should Contain             ${issue_attrs_assigned_to}       ${issue_assignee}
+    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
+    
+Edit Issue
+    Go To New Issue For Project        ${project_name_for_issues}
+    Input Text                         ${issue_subject_input}           ${issue_subject}
+    Wait For Successful Issue Submit   ${issue_subject}
+    Click Link                         ${issue_edit_link}
+    Select From List By Label          ${issue_priority_input}          ${issue_priority}
+    Press Key                          ${issue_subject_input}           \\13
+    Page Should Contain Element        ${issue_confirm}
+    Element Should Contain             ${issue_attrs_priority}          ${issue_priority}
+    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
 *** Keywords ***
 Get Issue ID From Title

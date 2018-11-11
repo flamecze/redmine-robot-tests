@@ -21,3 +21,6 @@ ${issue_attrs_estimated_hours}    ${issue_attrs_table}//td[@class='estimated-hou
 ${issue_attrs_progress_perc}      ${issue_attrs_table}//td[@class='progress']/p[@class='percent']
 ${issue_description_container}    xpath://div[@class='description']/div[@class='wiki']/p
 ${issue_delete_link}              xpath://a[@data-method='delete']
+${issue_assigned_to_input}        id=issue_assigned_to_id
+${issue_attrs_assigned_to}        ${issue_attrs_table}//td[@class='assigned-to']/a[@class='user active']
+${issue_edit_link}                xpath://a[@class='icon icon-edit']
