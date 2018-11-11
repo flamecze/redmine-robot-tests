@@ -68,7 +68,7 @@ Jump via select
 	Select From List By Label		${project_list}		${project_name_arg}		 
 	Wait Until Element Contains  	${project_name_h1}  ${project_name_arg}
 	
-Jump on tab
+Jump to project settings tab
 	[Arguments]		${tab_name}
 	Click Element	${project_set_href}
 	Wait Until Page Contains Element	xpath://h2[text()='Settings']

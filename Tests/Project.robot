@@ -23,11 +23,11 @@ Same project name
 	Wait Until Element Contains		${error_msg_box}		${project_err}
 
 Search project via input
-    Search via input    ${project_name}          
+    Search via input    ${project_name}
     
 Add member to project
     Jump via select    ${project_name}
-    Jump on tab        ${tab_members} 
+    Jump to project settings tab       ${project_tab_members}
     Add new member     ${new_member} 
     Wait Until Element Contains		${project_member_table}		${new_member}               
         
