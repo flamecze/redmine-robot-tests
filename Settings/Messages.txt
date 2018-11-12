@@ -1,4 +1,6 @@
 *** Variables ***
+${reg_err_pwd_short}    Password is too short (minimum is 4 characters)
+${reg_err_email_invalid}    Password is too short (minimum is 4 characters)
 ${project_succ}		Successful creation.
 ${project_err}		Identifier has already been taken
 ${issue_err_subject_blank}     Subject cannot be blank
