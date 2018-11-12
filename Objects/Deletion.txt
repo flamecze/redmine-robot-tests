@@ -2,3 +2,5 @@
 ${account}	xpath=//*[@id="account"]/ul/li[1]/a
 ${trashbin}    xpath=//*[@id="sidebar"]/p[2]/a
 ${delete}    xpath=//*[@id="content"]/div[1]/form/input[3]
+${check_box}	xpath=//*[@id="confirm"]
+${delete_msg_box}	xpath=//*[@id="flash_notice"]
