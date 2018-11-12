@@ -10,22 +10,13 @@ Initialize Random Data
     ${login_random} =   Generate Random String    10    [LETTERS]
     ${email_random} =   Generate Random String    15    [LETTERS][NUMBERS]
     ${login} =          Set Variable   User_${login_random}
-    ${email} =          Set Variable   ${login_random}@email.cz
+    ${email} =          Set Variable   ${email_random}@email.cz
     Set Suite Variable  ${login}
     Set Suite Variable  ${email}
 
 *** Test Cases ***
 Registration - Happy Path
-    Click Element    ${reg_link}
-    Input Text    ${user_field}   ${login}
-    Input Text    ${pwd_field}     ${reg_pwd}
-    Input Text    ${confirm_field}    ${reg_pwd}
-    Input Text    ${mail_field}    ${email}
-    Input Text    ${name_field}    ${name}		    
-    Input Text    ${surname_field}    ${surname}	
-    Select From List By Value    ${lang_dropdown}    ${en_value}
-    Click Button    ${btn_submit}
-    Page Should Contain Element    ${success_msg_box}
+    Register User    ${login}    ${reg_pwd}    ${email}    ${name}    ${surname}    ${en_value}
 
 Try to send empty reg form
     Click Element    ${reg_link}

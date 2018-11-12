@@ -1,10 +1,22 @@
 *** Settings ***
 Resource  ../Settings/Imports.txt
+Suite Setup    Initialize User
 Test Setup     Open Redmine And Login  ${url}  ${browser}  ${username}  ${password}
 Test Teardown  Close Browser
 
-*** Test Cases ***
+*** Keywords ***
+Initialize User
+    ${login_random} =   Generate Random String    10    [LETTERS]
+    ${email_random} =   Generate Random String    15    [LETTERS][NUMBERS]
+    ${login} =          Set Variable   User_${login_random}
+    ${email} =          Set Variable   ${email_random}@email.cz
+    Set Suite Variable  ${login}
+    Set Suite Variable  ${email}
+    Open Redmine        ${url}      ${browser}
+    Register User       ${login}    ${reg_pwd}    ${email}    ${name}    ${surname}    ${en_value}
+    Close Browser
 
+*** Test Cases ***
 Change Settings
     Click Element    ${account}
     Input Text    ${name_field}  ${change_name}
