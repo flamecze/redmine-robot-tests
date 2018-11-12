@@ -20,13 +20,6 @@ Open Redmine And Login
     Open Redmine       ${url}  ${browser}
     Login To Redmine   ${username}  ${password}
 
-Invalid Login To Redmine
-    [Arguments]       ${username}         ${password}
-    Click Element   ${singon}
-    Input Text    ${userfield2}  ${username}
-    Input Text    ${passwordfield2}   ${short_pwd}
-    Click Element	${loginbutton}
-
 Verify Error Messages
     [Arguments]    ${invalidlogin}
     Wait Until Page Contains Element    ${invalidlogin}
