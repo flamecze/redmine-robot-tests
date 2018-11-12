@@ -24,6 +24,19 @@ Verify Error Messages
     [Arguments]    ${invalidlogin}
     Wait Until Page Contains Element    ${invalidlogin}
 
+Register User
+    [Arguments]    ${login}    ${reg_pwd}    ${email}    ${name}    ${surname}    ${language}
+    Click Element    ${reg_link}
+    Input Text    ${user_field}   ${login}
+    Input Text    ${pwd_field}     ${reg_pwd}
+    Input Text    ${confirm_field}    ${reg_pwd}
+    Input Text    ${mail_field}    ${email}
+    Input Text    ${name_field}    ${name}
+    Input Text    ${surname_field}    ${surname}
+    Select From List By Value    ${lang_dropdown}    ${language}
+    Click Button    ${btn_submit}
+    Page Should Contain Element    ${success_msg_box}
+
 #	Project keywords
 
 Top menu select

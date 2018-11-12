@@ -16,16 +16,7 @@ Initialize Random Data
 
 *** Test Cases ***
 Registration - Happy Path
-    Click Element    ${reg_link}
-    Input Text    ${user_field}   ${login}
-    Input Text    ${pwd_field}     ${reg_pwd}
-    Input Text    ${confirm_field}    ${reg_pwd}
-    Input Text    ${mail_field}    ${email}
-    Input Text    ${name_field}    ${name}		    
-    Input Text    ${surname_field}    ${surname}	
-    Select From List By Value    ${lang_dropdown}    ${en_value}
-    Click Button    ${btn_submit}
-    Page Should Contain Element    ${success_msg_box}
+    Register User    ${login}    ${reg_pwd}    ${email}    ${name}    ${surname}    ${en_value}
 
 Try to send empty reg form
     Click Element    ${reg_link}
