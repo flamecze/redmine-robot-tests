@@ -80,6 +80,7 @@ Add new member
 	Wait Until Element Is Visible		${project_member_list}	
 	Input Text		${project_member_search}	${new_member}
 	Wait Until Element Contains    ${project_member_results}    ${new_member}
+	Sleep  1
 	Click Element    	${project_member_checkbox}
 	Click Element		${project_member_role_1}
 	Click Element		${project_member_role_2}
