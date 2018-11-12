@@ -2,13 +2,26 @@
 Resource  ../Settings/Imports.txt
 Test Setup     Open Redmine And Login  ${url}  ${browser}  ${username}  ${password}
 Test Teardown  Close Browser
+Suite Setup    Initialize Project
+
+*** Keywords ***
+Initialize Project
+    ${project_random} =           Generate Random String     10    [LETTERS]
+    ${category_random} =          Generate Random String     20    [LETTERS][NUMBERS]
+    ${project_name_for_issues} =  Set Variable               Project_${project_random}
+    ${category_name} =            Set Variable               Category_${category_random}
+    Open Redmine And Login        ${url}  ${browser}  ${username}  ${password}
+    Set Suite Variable            ${project_name_for_issues}
+    Set Suite Variable            ${category_name}
+    Top menu select               ${project_href}            ${project_new}
+    Create project                ${project_name_for_issues}
+    Close Browser
 
 *** Test Cases ***
 Create Issue With Minimal Input
     Go To New Issue For Project        ${project_name_for_issues}
     Input Text                         ${issue_subject_input}           ${issue_subject}
     Wait For Successful Issue Submit   ${issue_subject}
-    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
 Create Issue With Filled Valid Values
     Go To New Issue For Project        ${project_name_for_issues}
@@ -27,7 +40,6 @@ Create Issue With Filled Valid Values
     Element Should Contain             ${issue_attrs_estimated_hours}   ${issue_estimated_hrs_formatted} hours
     Element Should Contain             ${issue_attrs_progress_perc}     ${issue_done_ratio}%
     Element Should Contain             ${issue_description_container}   ${issue_description}
-    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
 Create Issue Without Subject
     Go To New Issue For Project        ${project_name_for_issues}
@@ -39,7 +51,10 @@ Delete Issue
     Go To New Issue For Project        ${project_name_for_issues}
     Input Text                         ${issue_subject_input}           ${issue_subject}
     Wait For Successful Issue Submit   ${issue_subject}
-    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
+    ${issue_id} =                      Get Issue ID From Title          ${issue_title_el}
+    Click Link                         ${issue_delete_link}
+    Handle Alert
+    Wait Until Page Does Not Contain   ${issue_id}
 
 View Today's Issue In Calendar
     Go To New Issue For Project        ${project_name_for_issues}
@@ -48,15 +63,12 @@ View Today's Issue In Calendar
     ${title_text} =   Get Text         ${issue_title_el}
     Click Link                         ${project_calendar_href}
     Wait Until Element Contains        ${project_calendar_today_cell}   ${title_text}
-    Go Back
-    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
 Create Issue Category
     Go To New Issue Category For Project  ${project_name_for_issues}
-    ${category_name} =                    Generate Random String           20  [LETTERS]
-    Input Text                            ${issue_cat_name_input}          Category_${category_name}
+    Input Text                            ${issue_cat_name_input}          ${category_name}
     Click Button                          ${issue_cat_btn_submit}
-    Wait Until Element Contains           ${issue_cat_table}               Category_${category_name}
+    Wait Until Element Contains           ${issue_cat_table}               ${category_name}
 
 Create Issue Category Without Name
     Go To New Issue Category For Project  ${project_name_for_issues}
@@ -70,7 +82,6 @@ Create Issue With Assignee
     Select From List By Label          ${issue_assigned_to_input}       ${issue_assignee}
     Wait For Successful Issue Submit   ${issue_subject}
     Element Should Contain             ${issue_attrs_assigned_to}       ${issue_assignee}
-    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
 Edit Issue
     Go To New Issue For Project        ${project_name_for_issues}
@@ -81,7 +92,6 @@ Edit Issue
     Press Key                          ${issue_subject_input}           \\13
     Page Should Contain Element        ${success_msg_box}
     Element Should Contain             ${issue_attrs_priority}          ${issue_priority}
-    Delete Issue From Detail           ${issue_delete_link}             ${issue_title_el}
 
 *** Keywords ***
 Get Issue ID From Title
@@ -89,13 +99,6 @@ Get Issue ID From Title
     ${title_text} =   Get Text          ${title_el}
     ${issue_id} =     Fetch From Right  ${title_text}   \#
     [Return]         ${issue_id}
-
-Delete Issue From Detail
-	[Arguments]	  ${delete_link}            ${title_el}
-    ${issue_id} =     Get Issue ID From Title   ${title_el}
-    Click Link        ${delete_link}
-    Handle Alert
-    Wait Until Page Does Not Contain   ${issue_id}
 
 Go To New Issue Category For Project
 	[Arguments]		               ${project_name_arg}
