@@ -1,7 +1,7 @@
 *** Settings ***
 Resource  ../Settings/Imports.txt
 Suite Setup    Initialize User
-Test Setup     Open Redmine And Login  ${url}  ${browser}  ${username}  ${password}
+Test Setup     Open Redmine And Login  ${url}  ${browser}  ${login}  ${reg_pwd}
 Test Teardown  Close Browser
 
 *** Keywords ***
