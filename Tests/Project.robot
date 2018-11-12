@@ -2,6 +2,15 @@
 Resource  ../Settings/Imports.txt
 Test Setup     Open Redmine And Login  ${url}  ${browser}  ${username}  ${password}
 Test Teardown  Close Browser
+Suite Setup    Initialize Random Data
+
+*** Keywords ***
+Initialize Random Data
+    ${project_number} =   Generate Random String    4    [NUMBERS]
+    ${project_name} =          Set Variable   Project_Team3_${project_number}
+    ${subproject_name} =          Set Variable   Subproject_Team3_${project_number}
+    Set Suite Variable  ${project_name}
+    Set Suite Variable  ${subproject_name}
 
 *** Test Cases ***
 New project and subproject
