@@ -9,7 +9,7 @@ Initialize User
     ${login_random} =   Generate Random String    10    [LETTERS]
     ${email_random} =   Generate Random String    15    [LETTERS][NUMBERS]
     ${login_del} =      Set Variable   User_${login_random}
-    ${email_del} =      Set Variable   ${login_random}@email.cz
+    ${email_del} =      Set Variable   ${email_random}@email.cz
     Set Suite Variable  ${login_del}
     Set Suite Variable  ${email_del}
     Open Redmine        ${url}      ${browser}
